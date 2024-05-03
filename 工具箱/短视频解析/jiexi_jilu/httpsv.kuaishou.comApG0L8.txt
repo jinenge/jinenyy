@@ -1,0 +1,10 @@
+{
+    "code": 200,
+    "name": "筷掱",
+    "url": "https://v.kuaishou.com/ApG0L8",
+    "desc": "...",
+    "video": "https://txmov2.a.kwimgs.com/upic/2024/04/24/21/BMjAyNDA0MjQyMTI1NTZfMTM3MjMxODQxNF8xMzA2NzY1Nzk1OTJfMV8z_b_B3c0c4650711e7d5870fb3d028d37bb0e.mp4?tag=1-1714281091-std-1-ppzst3to8t-6038aa3bd0e23bef&clientCacheKey=3xutym3i8afd45y_b.mp4&tt=b&di=276c0430&bp=12681&ali_redirect_ex_hot=66666800&ali_redirect_ex_beacon=1",
+    "cover": "http://txmov2.a.kwimgs.com/upic/2024/04/24/21/BMjAyNDA0MjQyMTI1NTZfMTM3MjMxODQxNF8xMzA2NzY1Nzk1OTJfMV8z_B762cbfefcedbedb5688e48b545f0f753.jpg?tag=1-1714281091-std-0-bxwkdlmyux-ec0e269180bc4ad5&clientCacheKey=3xutym3i8afd45y.jpg&di=276c0430&bp=12681",
+    "type": "视频",
+    "date": "2024-04-28 13:11:32"
+}

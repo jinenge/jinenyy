@@ -1,0 +1,10 @@
+{
+    "code": 200,
+    "name": "哔哩哔哩",
+    "url": "https://b23.tv/f5kOvEB",
+    "desc": "斐讯N1盒子救砖以及刷入OPENWRT系统教程",
+    "video": "https://upos-sz-mirrorcos.bilivideo.com/upgcxcode/44/48/1284224844/1284224844-1-192.mp4?e=ig8euxZM2rNcNbNgnwdVhwdlhbN3hwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1714608228&gen=playurlv2&os=mcdn&oi=3736776303&trid=000066c436e052f045598892fa89639d8ac1O&mid=0&platform=html5&upsig=d21a64aeadcade4085483b49f85e0ca0&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&mcdnid=50003329&bvc=vod&nettype=1&orderid=0,3&buvid=&build=7330300&f=O_0_0&bw=229051&logo=A0020000",
+    "cover": "https://i0.hdslb.com/bfs/archive/9602ee4f9c25c4ea67771fb7d0145bdd9ccce9c5.jpg",
+    "type": "视频",
+    "date": "2024-05-02 06:03:49"
+}

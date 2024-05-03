@@ -1,0 +1,10 @@
+{
+    "code": 200,
+    "name": "哔哩哔哩",
+    "url": "https://www.bilibili.com/video/BV1dw411U7cK/?spm_id_from=autoNext",
+    "desc": "TVBOX个人在线接口制作教程(第一期-萌新小白的第一步)",
+    "video": "https://upos-sz-mirrorcos.bilivideo.com/upgcxcode/01/67/1261736701/1261736701-1-192.mp4?e=ig8euxZM2rNcNbRa7WdVhwdlhWuBhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1714247234&gen=playurlv2&os=bcache&oi=2584261250&trid=000063c1eaf7445b44fe9704a597e020553fO&mid=0&platform=html5&upsig=3ebe1702e0c7a3f0b04084e50cd3c847&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform&cdnid=9931&bvc=vod&nettype=1&orderid=0,3&buvid=&build=7330300&f=O_0_0&bw=175372&logo=80000000",
+    "cover": "https://i2.hdslb.com/bfs/archive/590de6ecc2680fa355b64f05a8a3c702cbc6b572.jpg",
+    "type": "视频",
+    "date": "2024-04-28 01:47:14"
+}
