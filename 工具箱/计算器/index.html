@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <title>计算器</title>
+    <link rel="stylesheet" href="css/kcalculator.css"/>
+	<script defer="defer" src="js/gamma.js"></script>
+	<script defer="defer" src="js/calculator.js"></script>
+	<script defer="defer" src="js/core.js"></script>
+  </head>
+  <body>
+    <div id="display"><textarea readonly="readonly" disabled="disabed" ></textarea><div></div></div>
+    <div id="panel">
+	    <div class="block1">
+			<div class="key_column">
+
+				<a value="" href="index.html" data-type="value">普通</a>
+				<a class="small" value="sin(" data-type="operator">sin</a>
+				<a class="small" value="ln(" data-type="operator">ln</a>
+				<a class="sup" value="^2" data-type="operator"><p>x<sup>2</sup></p></a>
+				<a class="" value="(" data-type="command">(</a>
+			</div>
+		    <div class="key_column">
+			    <a class="" value="√(" data-type="operator">√</a>
+			    <a class="small" value="cos(" data-type="operator">cos</a>
+			    <a class="small" value="log(" data-type="operator">log</a>
+			    <a class="sup" value="^" data-type="operator"><p>x<sup>y</sup></p></a>
+			    <a class="" value=")" data-type="command">)</a>
+		    </div>
+		    <div class="key_column">
+			    <a class="" value="%" data-type="operator">%</a>
+			    <a class="small" value="tan(" data-type="operator">tan</a>
+			    <a class="small" value="1÷(" data-type="operator">1/x</a>
+			    <a class="" value="e" data-type="specialValue">e</a>
+			    <a class="" value="π" data-type="specialValue">π</a>
+		    </div>
+	    </div>
+	    <div class="block2">
+			<div class="key_column2">
+				<a class="small" value="!" data-type="operator" >🔒</a>
+				<a class="num" value="7" data-type="value">7</a>
+				<a class="num" value="4" data-type="value">4</a>
+				<a class="num" value="1" data-type="value">1</a>
+				<a class="num" value="+/-" data-type="command">+/-</a>
+
+			</div>
+			<div class="key_column2">
+				<a value="C" data-type="command">C</a>
+				<a class="num" value="8" data-type="value">8</a>
+				<a class="num" value="5" data-type="value">5</a>
+				<a class="num" value="2" data-type="value">2</a>
+				<a class="num" value="0" data-type="value">0</a>
+
+			</div>
+			<div class="key_column2">
+				<a value="<" id="backspace" data-type="command" ><</a>
+				<a class="num" value="9" data-type="value" >9</a>
+				<a class="num" value="6" data-type="value" >6</a>
+				<a class="num" value="3" data-type="value" >3</a>
+				<a class="num" value="." data-type="value">.</a>
+
+			</div>
+			<div class="key_column2">
+				<a class="" value="÷" id="add" data-type="operator">÷</a>
+				<a class="" value="x" id="multiply" data-type="operator">x</a>
+				<a value="-" id="subtract" data-type="operator">－</a>
+				<a value="+" id="divide" data-type="operator">+</a>
+				<a value="=" data-type="command" >=</a>
+
+			</div>
+	    </div>
+    </div>
+  </body>
+</html>
+

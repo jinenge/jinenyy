@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>日历</title>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:100,100' rel='stylesheet' type='./css/rili.css'>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<html lang="en">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"><link rel="stylesheet" href="./css/rili.css">
+ <table width="50%" border="0" align="center"><tr><td align="center">
+</head>
+<body>
+<html ng-app='calendarApp' ng-cloak='true'></html>
+<div class='calendar' ng-controller='calendarController as calendar'>
+  <div class='calendar_left'>
+    <div class='header'>
+      <i class='material-icons' ng-click='calendar.prev()'>navigate_before</i>
+      <h1>{{calendar.month}}</h1>
+      <i class='material-icons' ng-click='calendar.next()'>navigate_next</i>
+    </div>
+    <div class='days'>
+      <div class='day_item'>一</div>
+      <div class='day_item'>二</div>
+      <div class='day_item'>三</div>
+      <div class='day_item'>四</div>
+      <div class='day_item'>五</div>
+      <div class='day_item'>六</div>
+      <div class='day_item'>日</div>
+    </div>
+    <div class='dates'></div>
+  </div>
+  <div class='calendar_right'>
+    <div class='list'>
+      <ul>
+        <li class='bounce-in' ng-repeat='events in calendar.events' ng-show='events.id === calendar.dataId'>
+          <span class='type'>It's a {{ events.type }} thing -</span>
+          <span class='description'>{{ events.description }}</span>
+        </li>
+      </ul>        
+    </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://code.angularjs.org/1.8.2/angular-animate.js'></script><script  src="./js/rili.js"></script>
+</body>
+</html>

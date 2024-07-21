@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html>
+<head
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>罗盘时钟</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+    var style = document.styleSheets[0];
+    var monthLeft=$(".main-content .month").css("left");
+    var dayLeft=$(".main-content .day").css("left");
+    var weekLeft=$(".main-content .week").css("left");
+    var shichenLeft=$(".main-content .shichen").css("left");
+    var hourLeft=$(".main-content .hour").css("left");
+    var minuteLeft=$(".main-content .minute").css("left");
+    var secondLeft=$(".main-content .second").css("left");
+    var top=$(".main-content .month").css("top");
+    var yearLeft=$(".main-content .year span").width()/2;
+    var type=2; //类型切换： 0阿拉伯数字 1简体 2繁体 3英文
+
+    //当前日期时间
+    var Time={
+        currentTime:{
+            year:2022,
+            month:9,
+            day:27,
+            hour:23,
+            minute:37,
+            second:3,
+            week:0,
+            shichen:{}
+        },
+        months:[],
+        days:[],
+        hours:[],
+        minutes:[],
+        seconds:[],
+        shichens:[],
+        weeks:[],
+        hours:[],
+        minutes:[],
+        seconds:[],
+        yearUnit:"年",
+        monthUnit:"月",
+        dayUnit:"日",
+        weekUnit:"星期",
+        hourUnit:"时",
+        minuteUnit:"分",
+        secondUnit:"秒"
+    }
+    
+    var month=Time.currentTime.month;
+    var year=Time.currentTime.year;
+    initTime(Time,type);
+
+    
+
+
+    $(".main-content .year").append("<span class='current'>"+Time.currentTime.year+Time.yearUnit+"</span>");
+
+    var h=$(".year span").height();
+    top=-(parseInt(top))-parseInt(h)/2;
+    top+="px";
+
+
+    $(".main-content .month").append("<span class='current'>"+Time.currentTime.month+Time.monthUnit+"</span>");
+    $(".main-content .day").append("<span class='current'>"+Time.currentTime.day+Time.dayUnit+"</span>");
+    $(".main-content .week").append("<span class='current'>"+Time.currentTime.week+"</span>");
+    $(".main-content .shichen").append("<span class='current'>"+Time.currentTime.shichen.str+"</span>");
+    $(".main-content .hour").append("<span class='current'>"+Time.currentTime.hour+Time.hourUnit+"</span>");
+    $(".main-content .minute").append("<span class='current'>"+Time.currentTime.minute+Time.minuteUnit+"</span>");
+    $(".main-content .second").append("<span class='current'>"+Time.currentTime.second+Time.secondUnit+"</span>");
+
+
+
+    for (const key in Time.months) {
+        if (Time.months.hasOwnProperty(key)) {
+            const element = Time.months[key];
+            if(element!=Time.currentTime.month){
+                $(".main-content .month").append("<span>"+element+Time.monthUnit+"</span>");
+            }
+            
+        }
+    }
+
+    for (const key in Time.days) {
+        if (Time.days.hasOwnProperty(key)) {
+            const element = Time.days[key];
+            if(element!=Time.currentTime.day){
+                $(".main-content .day").append("<span>"+element+Time.dayUnit+"</span>");
+            }
+            
+        }
+    }
+
+    for (const key in Time.weeks) {
+        if (Time.weeks.hasOwnProperty(key)) {
+            const element = Time.weeks[key];
+            if(element!=Time.currentTime.week){
+                $(".main-content .week").append("<span>"+element+"</span>");
+            }
+            
+            
+        }
+    }
+
+
+    for (const key in Time.shichens) {
+        if (Time.shichens.hasOwnProperty(key)) {
+            const element = Time.shichens[key];
+            if(element!=Time.currentTime.shichen.str){
+                $(".main-content .shichen").append("<span>"+element+"</span>");
+            }
+            
+        }
+    }
+
+
+
+    for (const key in Time.hours) {
+        if (Time.hours.hasOwnProperty(key)) {
+            const element = Time.hours[key];
+            if(element!=Time.currentTime.hour){
+                $(".main-content .hour").append("<span>"+element+Time.hourUnit+"</span>");
+            }
+            
+        }
+        
+    }
+
+    for (const key in Time.minutes) {
+        if (Time.minutes.hasOwnProperty(key)) {
+            const element = Time.minutes[key];
+            if(element!=Time.currentTime.minute){
+                $(".main-content .minute").append("<span>"+element+Time.minuteUnit+"</span>");
+            }
+            
+        }
+        
+    }
+
+    for (const key in Time.seconds) {
+        if (Time.seconds.hasOwnProperty(key)) {
+            const element = Time.seconds[key];
+            if(element!=Time.currentTime.second){
+                $(".main-content .second").append("<span>"+element+Time.secondUnit+"</span>");
+            }
+            
+        }
+        
+    }
+
+
+
+
+
+    setTimeout(function () {
+        $(".month span").each(function(index,element){
+            $(element).css("animation","month"+index+" 1s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes month"+index+"{0%{transform: rotateZ(0);transform-origin: -"+monthLeft+" "+top+";}100%{transform:rotateZ("+-(360/12)*(index)+"deg);transform-origin: -"+monthLeft+" "+top+";}}",style.rules.length);
+
+        });
+    }, 0);
+
+
+    setTimeout(function () {
+        $(".day span").each(function(index,element){
+            $(element).css("animation","day"+index+" 1s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes day"+index+"{0%{transform: rotateZ(0);transform-origin: -"+dayLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.days.length)*index+"deg);transform-origin: -"+dayLeft+" "+top+";}}",style.rules.length);
+        });
+    }, 1000);
+
+    setTimeout(function () {
+        $(".week span").each(function(index,element){
+            $(element).css("animation","week"+index+" 1s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes week"+index+"{0%{transform: rotateZ(0);transform-origin: -"+weekLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.weeks.length)*index+"deg);transform-origin: -"+weekLeft+" "+top+";}}",style.rules.length);
+        });
+    }, 2000);
+
+
+
+
+    setTimeout(function () {
+        $(".shichen span").each(function(index,element){
+            $(element).css("animation","shichen"+index+" 1s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes shichen"+index+"{0%{transform: rotateZ(0);transform-origin: -"+shichenLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.shichens.length)*index+"deg);transform-origin: -"+shichenLeft+" "+top+";}}",style.rules.length);
+        });
+    }, 3000);
+
+
+    setTimeout(function () {
+        $(".hour span").each(function(index,element){
+            $(element).css("animation","hour"+index+" 1s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes hour"+index+"{0%{transform: rotateZ(0);transform-origin: -"+hourLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.hours.length)*index+"deg);transform-origin: -"+hourLeft+" "+top+";}}",style.rules.length);
+        });
+        
+    }, 4000);
+
+    setTimeout(function () {
+        $(".minute span").each(function(index,element){
+            $(element).css("animation","minute"+index+" 1s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes minute"+index+"{0%{transform: rotateZ(0);transform-origin: -"+minuteLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.minutes.length)*index+"deg);transform-origin: -"+minuteLeft+" "+top+";}}",style.rules.length);
+        });
+        
+    }, 5000);
+
+
+    setTimeout(function () {
+        $(".second span").each(function(index,element){
+            $(element).css("animation","second"+index+" 1s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes second"+index+"{0%{transform: rotateZ(0);transform-origin: -"+secondLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.seconds.length)*index+"deg);transform-origin: -"+secondLeft+" "+top+";}}",style.rules.length);
+        });
+        
+    }, 6000);
+
+    
+
+    
+    //旋转
+    setTimeout(function () {
+
+
+        $(".year span").css("animation","yearRun 1s linear infinite");
+        style.insertRule("@keyframes yearRun {0%{transform: rotateZ(0);transform-origin: -"+yearLeft+" "+top+";}100%{transform:rotateZ(720deg);transform-origin: -"+yearLeft+" "+top+";}}",style.rules.length);
+
+
+        $($(".main-content .second span")[0]).removeClass("current");
+        $(".second span").each(function(index,element){
+            $(element).css("animation","secondRun"+index+" 1s linear infinite");
+            style.insertRule("@keyframes secondRun"+index+" {0%{transform: rotateZ(0);transform-origin: -"+secondLeft+" "+top+";}100%{transform:rotateZ("+((index+1)*720)+"deg);transform-origin: -"+secondLeft+" "+top+";}}",style.rules.length);
+            
+        });
+
+
+        $($(".main-content .minute span")[0]).removeClass("current");
+        $(".minute span").each(function(index,element){
+            $(element).css("animation","minuteRun"+index+" 1s linear infinite");
+            style.insertRule("@keyframes minuteRun"+index+" {0%{transform: rotateZ(0);transform-origin: -"+minuteLeft+" "+top+";}100%{transform:rotateZ("+((index+1)*720)+"deg);transform-origin: -"+minuteLeft+" "+top+";}}",style.rules.length);
+            
+        });
+
+
+        $($(".main-content .hour span")[0]).removeClass("current");
+        $(".hour span").each(function(index,element){
+            $(element).css("animation","hourRun"+index+" 1s linear infinite");
+            style.insertRule("@keyframes hourRun"+index+" {0%{transform: rotateZ(0);transform-origin: -"+hourLeft+" "+top+";}100%{transform:rotateZ("+((index+1)*720)+"deg);transform-origin: -"+hourLeft+" "+top+";}}",style.rules.length);
+            
+        });
+
+        $($(".main-content .shichen span")[0]).removeClass("current");
+        $(".shichen span").each(function(index,element){
+            $(element).css("animation","shichenRun"+index+" 1s linear infinite");
+            style.insertRule("@keyframes shichenRun"+index+" {0%{transform: rotateZ(0);transform-origin: -"+shichenLeft+" "+top+";}100%{transform:rotateZ("+((index+1)*720)+"deg);transform-origin: -"+shichenLeft+" "+top+";}}",style.rules.length);
+            
+        });
+
+        $($(".main-content .week span")[0]).removeClass("current");
+        $(".week span").each(function(index,element){
+            $(element).css("animation","weekRun"+index+" 1s linear infinite");
+            style.insertRule("@keyframes weekRun"+index+" {0%{transform: rotateZ(0);transform-origin: -"+weekLeft+" "+top+";}100%{transform:rotateZ("+((index+1)*720)+"deg);transform-origin: -"+weekLeft+" "+top+";}}",style.rules.length);
+            
+        });
+
+        $($(".main-content .day span")[0]).removeClass("current");
+        $(".day span").each(function(index,element){
+            $(element).css("animation","dayRun"+index+" 1s linear infinite");
+            style.insertRule("@keyframes dayRun"+index+" {0%{transform: rotateZ(0);transform-origin: -"+dayLeft+" "+top+";}100%{transform:rotateZ("+((index+1)*720)+"deg);transform-origin: -"+dayLeft+" "+top+";}}",style.rules.length);
+            
+        });
+
+        $($(".main-content .month span")[0]).removeClass("current");
+        $(".month span").each(function(index,element){
+            $(element).css("animation","monthRun"+index+" 1s linear infinite");
+            style.insertRule("@keyframes monthRun"+index+" {0%{transform: rotateZ(0);transform-origin: -"+monthLeft+" "+top+";}100%{transform:rotateZ("+((index+1)*720)+"deg);transform-origin: -"+monthLeft+" "+top+";}}",style.rules.length);
+            
+        });
+
+
+    }, 7000);
+    
+
+    //初始化当前时间
+    setTimeout(function () {
+        var myDate = new Date();
+        Time.currentTime.year=myDate.getFullYear();
+        Time.currentTime.month=myDate.getMonth()+1;
+        Time.currentTime.day=myDate.getDate();
+        Time.currentTime.week=myDate.getDay();
+        Time.currentTime.hour=myDate.getHours();
+        Time.currentTime.minute=myDate.getMinutes();
+        Time.currentTime.second=myDate.getSeconds();
+        // Time.currentTime.day=27;
+        // Time.currentTime.hour=23;
+        // Time.currentTime.minute=59;
+        // Time.currentTime.second=57;
+        // Time.currentTime.day=31;
+        // Time.currentTime.month=12;
+        month=Time.currentTime.month;
+        year=Time.currentTime.year;
+        initTime(Time,type);
+
+
+        $(".main-content .year").html("");
+        $(".main-content .year").append("<span class='current'>"+Time.currentTime.year+Time.yearUnit+"</span>");
+
+        $(".main-content .second").html("");
+        $(".main-content .second").append("<span class='current'>"+Time.currentTime.second+Time.secondUnit+"</span>");
+        for (const key in Time.seconds) {
+            if (Time.seconds.hasOwnProperty(key)) {
+                const element = Time.seconds[key];
+                if(element!=Time.currentTime.second){
+                    $(".main-content .second").append("<span>"+element+Time.secondUnit+"</span>");
+                }
+                
+            }
+            
+        }
+
+
+        $(".main-content .minute").html("");
+        $(".main-content .minute").append("<span class='current'>"+Time.currentTime.minute+Time.minuteUnit+"</span>");
+        for (const key in Time.minutes) {
+            if (Time.minutes.hasOwnProperty(key)) {
+                const element = Time.minutes[key];
+                if(element!=Time.currentTime.minute){
+                    $(".main-content .minute").append("<span>"+element+Time.minuteUnit+"</span>");
+                }
+                
+            }
+            
+        }
+
+
+        $(".main-content .hour").html("");
+        $(".main-content .hour").append("<span class='current'>"+Time.currentTime.hour+Time.hourUnit+"</span>");
+        for (const key in Time.hours) {
+            if (Time.hours.hasOwnProperty(key)) {
+                const element = Time.hours[key];
+                if(element!=Time.currentTime.hour){
+                    $(".main-content .hour").append("<span>"+element+Time.hourUnit+"</span>");
+                }
+                
+            }
+            
+        }
+
+
+        $(".main-content .shichen").html("");
+        $(".main-content .shichen").append("<span class='current'>"+Time.currentTime.shichen.str+"</span>");
+        for (const key in Time.shichens) {
+            if (Time.shichens.hasOwnProperty(key)) {
+                const element = Time.shichens[key];
+                if(element!=Time.currentTime.shichen.str){
+                    $(".main-content .shichen").append("<span>"+element+"</span>");
+                }
+                
+            }
+            
+        }
+
+
+        $(".main-content .week").html("");
+        $(".main-content .week").append("<span class='current'>"+Time.currentTime.week+"</span>");
+        for (const key in Time.weeks) {
+            if (Time.weeks.hasOwnProperty(key)) {
+                const element = Time.weeks[key];
+                if(element!=Time.currentTime.week){
+                    $(".main-content .week").append("<span>"+element+"</span>");
+                }
+                
+                
+            }
+            
+        }
+
+        $(".main-content .day").html("");
+        $(".main-content .day").append("<span class='current'>"+Time.currentTime.day+Time.dayUnit+"</span>");
+        for (const key in Time.days) {
+            if (Time.days.hasOwnProperty(key)) {
+                const element = Time.days[key];
+                if(element!=Time.currentTime.day){
+                    $(".main-content .day").append("<span>"+element+Time.dayUnit+"</span>");
+                }
+                
+            }
+            
+        }
+
+
+        $(".main-content .month").html("");
+        $(".main-content .month").append("<span class='current'>"+Time.currentTime.month+Time.monthUnit+"</span>");
+        for (const key in Time.months) {
+            if (Time.months.hasOwnProperty(key)) {
+                const element = Time.months[key];
+                if(element!=Time.currentTime.month){
+                    $(".main-content .month").append("<span>"+element+Time.monthUnit+"</span>");
+                }
+                
+            }
+            
+        }
+
+
+
+    }, 8000);
+
+    //转到当前时间
+    setTimeout(function () {
+        $(".second span").each(function(index,element){
+            $(element).css("animation","second"+index+" 0s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes second"+index+"{0%{transform: rotateZ(0);transform-origin: -"+secondLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.seconds.length)*index+"deg);transform-origin: -"+secondLeft+" "+top+";}}",style.rules.length);
+
+        });
+
+
+        $(".minute span").each(function(index,element){
+            $(element).css("animation","minute"+index+" 0s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes minute"+index+"{0%{transform: rotateZ(0);transform-origin: -"+minuteLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.minutes.length)*index+"deg);transform-origin: -"+minuteLeft+" "+top+";}}",style.rules.length);
+
+        });
+
+
+        $(".hour span").each(function(index,element){
+            $(element).css("animation","hour"+index+" 0s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes hour"+index+"{0%{transform: rotateZ(0);transform-origin: -"+hourLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.hours.length)*index+"deg);transform-origin: -"+hourLeft+" "+top+";}}",style.rules.length);
+
+        });
+
+
+        
+        $(".shichen span").each(function(index,element){
+            $(element).css("animation","shichen"+index+" 0s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes shichen"+index+"{0%{transform: rotateZ(0);transform-origin: -"+shichenLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.shichens.length)*index+"deg);transform-origin: -"+shichenLeft+" "+top+";}}",style.rules.length);
+
+        });
+
+
+        $(".week span").each(function(index,element){
+            $(element).css("animation","week"+index+" 0s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes week"+index+"{0%{transform: rotateZ(0);transform-origin: -"+weekLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.weeks.length)*index+"deg);transform-origin: -"+weekLeft+" "+top+";}}",style.rules.length);
+
+        });
+
+
+        $(".day span").each(function(index,element){
+            $(element).css("animation","day"+index+" 0s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes day"+index+"{0%{transform: rotateZ(0);transform-origin: -"+dayLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.days.length)*index+"deg);transform-origin: -"+dayLeft+" "+top+";}}",style.rules.length);
+
+        });
+
+
+        $(".month span").each(function(index,element){
+            $(element).css("animation","month"+index+" 0s linear");
+            $(element).css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes month"+index+"{0%{transform: rotateZ(0);transform-origin: -"+monthLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.months.length)*index+"deg);transform-origin: -"+monthLeft+" "+top+";}}",style.rules.length);
+
+        });
+
+    }, 8000);
+
+    setTimeout(function (){
+        setInterval(run,1000)
+        // run();
+    },8000)
+
+
+    var seci=1;
+    var mini=1;
+    var houri=1;
+    var shicheni=1;
+    var weeki=1;
+    var dayi=1;
+    var monthi=1;
+    function run(){
+        var next=$(".second span.current").next();
+
+
+        if(next.text()==""){
+            next=$(".second span").first();
+        }
+        var secang1=6*(seci-1);
+        var secang2=6*seci;
+        $(".second").css("animation","secondRun"+seci+" 0.5s ease-in-out");
+        $(".second").css("animation-fill-mode","forwards");
+        //90%{transform: rotateZ("+(secang1)+"deg);transform-origin: -"+secondLeft+" "+top+";} 
+        style.insertRule("@keyframes secondRun"+seci+"{0%{transform: rotateZ("+secang1+"deg);transform-origin: -"+secondLeft+" "+top+";} 50%{transform:rotateZ("+(secang2+1)+"deg);transform-origin: -"+secondLeft+" "+top+";} 100%{transform:rotateZ("+secang2+"deg);transform-origin: -"+secondLeft+" "+top+";}}",style.rules.length);
+
+        $(".second span.current").removeClass("current");
+        next.addClass("current");
+        seci++;
+        if(seci>60){
+            seci=1;
+        }
+
+
+
+        //进分钟
+        var secText=$(".second span.current").text();
+
+        if(secText=="0秒"||secText=="零秒"||secText=="0 s"){
+            var minang1=6*(mini-1);
+            var minang2=6*mini;
+
+            var next=$(".minute span.current").next();
+
+            if(next.text()==""){
+                next=$(".minute span").first();
+            }
+
+            $(".minute").css("animation","minuteRun"+mini+" 0.5s ease-in-out");
+            $(".minute").css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes minuteRun"+mini+" {0%{transform: rotateZ("+minang1+"deg);transform-origin: -"+minuteLeft+" "+top+";} 100%{transform:rotateZ("+minang2+"deg);transform-origin: -"+minuteLeft+" "+top+";}}",style.rules.length);
+            
+            $(".minute span.current").removeClass("current");
+            next.addClass("current");
+            mini++;
+            if(mini>60){
+                mini=1;
+            }
+            
+        }
+
+
+        //进小时
+        var minText=$(".minute span.current").text();
+
+        if((secText=="0秒"||secText=="零秒"||secText=="0 s") &&(minText=="0分"||minText=="零分"||minText=="0 m")){
+
+            var hourang1=15*(houri-1);
+            var hourang2=15*houri;
+
+            var next=$(".hour span.current").next();
+
+            if(next.text()==""){
+                next=$(".hour span").first();
+            }
+            $(".hour").css("animation","hourRun"+houri+" 0.5s ease-in-out");
+            $(".hour").css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes hourRun"+houri+" {0%{transform: rotateZ("+hourang1+"deg);transform-origin: -"+hourLeft+" "+top+";} 100%{transform:rotateZ("+hourang2+"deg);transform-origin: -"+hourLeft+" "+top+";}}",style.rules.length);
+            
+            $(".hour span.current").removeClass("current");
+            next.addClass("current");
+            houri++;
+            if(houri>24){
+                houri=1;
+            }
+            
+        }
+
+        //进时辰
+        var hourText=$(".hour span.current").text();
+
+        if((secText=="0秒"||secText=="零秒"||secText=="0 s") && (minText=="0分"||minText=="零分"||minText=="0 m")&&isShichen(hourText)){
+            var shichenang1=30*(shicheni-1);
+            var shichenang2=30*shicheni;
+
+            var next=$(".shichen span.current").next();
+
+            if(next.text()==""){
+                next=$(".shichen span").first();
+            }
+            $(".shichen").css("animation","shichenRun"+shicheni+" 0.5s ease-in-out");
+            $(".shichen").css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes shichenRun"+shicheni+" {0%{transform: rotateZ("+shichenang1+"deg);transform-origin: -"+shichenLeft+" "+top+";} 100%{transform:rotateZ("+shichenang2+"deg);transform-origin: -"+shichenLeft+" "+top+";}}",style.rules.length);
+            
+            $(".shichen span.current").removeClass("current");
+            next.addClass("current");
+            shicheni++;
+            if(shicheni>30){
+                shicheni=1;
+            }
+            
+        }
+
+
+        //进星期和日
+        if((secText=="0秒"||secText=="零秒"||secText=="0 s") && (minText=="0分"||minText=="零分"||minText=="0 m")&&(hourText=="0时"||hourText=="零时"||hourText=="0 h")){
+            var weekang1=(360/7)*(weeki-1);
+            var weekang2=(360/7)*weeki;
+            var dayang1=(360/Time.days.length)*(dayi-1);
+            var dayang2=(360/Time.days.length)*dayi;
+
+            console.log(dayang1);
+            var nextweek=$(".week span.current").next();
+            var nextday=$(".day span.current").next();
+
+            if(nextweek.text()==""){
+                nextweek=$(".week span").first();
+            }
+            if(nextday.text()==""){
+                nextday=$(".day span").first();
+            }
+
+            $(".week").css("animation","weekRun"+weeki+" 0.5s ease-in-out");
+            $(".week").css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes weekRun"+weeki+" {0%{transform: rotateZ("+weekang1+"deg);transform-origin: -"+weekLeft+" "+top+";} 100%{transform:rotateZ("+weekang2+"deg);transform-origin: -"+weekLeft+" "+top+";}}",style.rules.length);
+            
+            $(".day").css("animation","dayRun"+dayi+" 0.5s ease-in-out");
+            $(".day").css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes dayRun"+dayi+" {0%{transform: rotateZ("+dayang1+"deg);transform-origin: -"+dayLeft+" "+top+";} 100%{transform:rotateZ("+dayang2+"deg);transform-origin: -"+dayLeft+" "+top+";}}",style.rules.length);
+
+
+
+            $(".week span.current").removeClass("current");
+            nextweek.addClass("current");
+            weeki++;
+            if(weeki>7){
+                weeki=1;
+            }
+
+            $(".day span.current").removeClass("current");
+            nextday.addClass("current");
+            dayi++;
+            if(dayi>Time.days.length){
+                dayi=1;
+            }
+            
+        }
+
+
+        //进月
+        var dayText=$(".day span.current").text();
+        if((dayText=="1 day"||dayText==numToSimp(1)+"日"||dayText==numToTrad(1)+"日"||dayText=="1日")&&(secText=="0秒"||secText=="零秒"||secText=="0 s") && (minText=="0分"||minText=="零分"||minText=="0 m")&&(hourText=="0时"||hourText=="零时"||hourText=="0 h")){
+
+            var monthang1=30*(monthi-1);
+            var monthang2=30*monthi;
+            
+
+            var next=$(".month span.current").next();
+
+            if(next.text()==""){
+                next=$(".month span").first();
+            }
+            $(".month").css("animation","monthRun"+monthi+" 0.5s ease-in-out");
+            $(".month").css("animation-fill-mode","forwards");
+            style.insertRule("@keyframes monthRun"+monthi+" {0%{transform: rotateZ("+monthang1+"deg);transform-origin: -"+monthLeft+" "+top+";} 100%{transform:rotateZ("+monthang2+"deg);transform-origin: -"+monthLeft+" "+top+";}}",style.rules.length);
+            
+
+            month++;
+            if(month>12)
+            {
+                month=1;
+            }
+            //更新日
+            $(".day").html("");
+            Time.days=updateDays(type,year,month,1);
+            Time.currentTime.day=getFirstDay(type);
+            $(".main-content .day").append("<span class='current'>"+Time.currentTime.day+Time.dayUnit+"</span>");
+            for (const key in Time.days) {
+                if (Time.days.hasOwnProperty(key)) {
+                    const element = Time.days[key];
+                    if(element!=Time.currentTime.day){
+                        $(".main-content .day").append("<span>"+element+Time.dayUnit+"</span>");
+                    }
+                    
+                }
+                
+            }
+            $(".day span").each(function(index,element){
+                $(element).css("animation","day"+index+" 0.5s linear");
+                $(element).css("animation-fill-mode","forwards");
+                style.insertRule("@keyframes day"+index+"{0%{transform: rotateZ(0);transform-origin: -"+dayLeft+" "+top+";}100%{transform:rotateZ("+-(360/Time.days.length)*(index+1)+"deg);transform-origin: -"+dayLeft+" "+top+";}}",style.rules.length);
+            });
+
+
+
+
+
+            $(".month span.current").removeClass("current");
+            next.addClass("current");
+            monthi++;
+            if(monthi>12){
+                monthi=1;
+            }
+            
+        }
+
+
+
+        //进年
+
+        if(month==1&&(dayText=="1 day"||dayText==numToSimp(1)+"日"||dayText==numToTrad(1)+"日"||dayText=="1日")&&(secText=="0秒"||secText=="零秒"||secText=="0 s") && (minText=="0分"||minText=="零分"||minText=="0 m")&&(hourText=="0时"||hourText=="零时"||hourText=="0 h")){
+            year++;
+            Time.currentTime.year=getYear(type,year);
+            $(".year span").html(getYear(type,year)+Time.yearUnit);
+            
+        }
+
+    }
+
+});
+
+
+
+
+
+function initTime(Time,type){
+    switch (type) {
+        case 0:
+
+        
+
+            Time.months=getMonths(0,Time.currentTime.month);
+            Time.days=getdays(0,Time.currentTime.year,Time.currentTime.month,Time.currentTime.day);
+            Time.weeks=getWeeks(0,Time.currentTime.week);
+            Time.hours=getHours(0,Time.currentTime.hour);
+            Time.minutes=getMinutes(0,Time.currentTime.minute);
+            Time.seconds=getSeconds(0,Time.currentTime.second);
+
+            Time.currentTime.week=Time.weekUnit+ getWeek(0,Time.currentTime.week);
+            Time.currentTime.shichen=getShiChen(0,Time.currentTime.hour);
+            Time.shichens=getShiChens(0,Time.currentTime.shichen);
+
+
+           
+            break;
+        case 1:
+
+                
+            Time.months=getMonths(1,Time.currentTime.month);
+            Time.days=getdays(1,Time.currentTime.year,Time.currentTime.month,Time.currentTime.day);
+            Time.weeks=getWeeks(1,Time.currentTime.week);
+            Time.hours=getHours(1,Time.currentTime.hour);
+            Time.minutes=getMinutes(1,Time.currentTime.minute);
+            Time.seconds=getSeconds(1,Time.currentTime.second);
+
+            Time.currentTime.month=numToSimp(Time.currentTime.month);
+            Time.currentTime.day=numToSimp(Time.currentTime.day);
+            Time.currentTime.week=Time.weekUnit+getWeek(1,Time.currentTime.week);
+            Time.currentTime.shichen=getShiChen(1,Time.currentTime.hour);
+            Time.shichens=getShiChens(1,Time.currentTime.shichen);
+            Time.currentTime.hour=numToSimp(Time.currentTime.hour);
+            Time.currentTime.minute=numToSimp(Time.currentTime.minute);
+            Time.currentTime.second=numToSimp(Time.currentTime.second);
+            Time.currentTime.year=getYear(1,Time.currentTime.year);
+
+            break;
+        case 2:
+
+
+            Time.months=getMonths(2,Time.currentTime.month);
+            Time.days=getdays(2,Time.currentTime.year,Time.currentTime.month,Time.currentTime.day);
+            Time.weeks=getWeeks(2,Time.currentTime.week);
+            Time.hours=getHours(2,Time.currentTime.hour);
+            Time.minutes=getMinutes(2,Time.currentTime.minute);
+            Time.seconds=getSeconds(2,Time.currentTime.second);
+
+
+            Time.currentTime.month=numToTrad(Time.currentTime.month);
+            Time.currentTime.day=numToTrad(Time.currentTime.day);
+            Time.currentTime.week=Time.weekUnit+getWeek(2,Time.currentTime.week);
+            Time.currentTime.shichen=getShiChen(2,Time.currentTime.hour);
+            Time.shichens=getShiChens(2,Time.currentTime.shichen);
+            Time.currentTime.hour=numToTrad(Time.currentTime.hour);
+            Time.currentTime.minute=numToTrad(Time.currentTime.minute);
+            Time.currentTime.second=numToTrad(Time.currentTime.second);
+            Time.currentTime.year=getYear(2,Time.currentTime.year);
+
+            break;
+        case 3:
+
+        
+            Time.months=getMonths(3,Time.currentTime.month);
+            Time.days=getdays(0,Time.currentTime.year,Time.currentTime.month,Time.currentTime.day);
+            Time.weeks=getWeeks(3,Time.currentTime.week);
+            Time.hours=getHours(3,Time.currentTime.hour);
+            Time.minutes=getMinutes(3,Time.currentTime.minute);
+            Time.seconds=getSeconds(3,Time.currentTime.second);
+
+
+
+            Time.currentTime.month=getMonthEng(Time.currentTime.month);
+            Time.currentTime.week=getWeek(3,Time.currentTime.week);
+            Time.currentTime.shichen=getShiChen(3,Time.currentTime.hour);
+            Time.shichens=getShiChens(3,Time.currentTime.shichen);
+            // Time.currentTime.hour=numToEng(Time.currentTime.hour);
+            // Time.currentTime.minute=numToEng(Time.currentTime.minute);
+            // Time.currentTime.second=numToEng(Time.currentTime.second);
+            Time.monthUnit="";
+            Time.dayUnit=" day"
+            Time.weekUnit=""
+            Time.hourUnit=" h"
+            Time.minuteUnit=" m"
+            Time.secondUnit=" s"
+            Time.yearUnit=" Year"
+            
+
+
+            break;
+    }
+}
+
+
+
+    </script>
+    <script>
+        //简体
+function numToSimp(n){
+    var str = "";
+    var units=parseInt(n%10);
+    var tens=parseInt(n/10);
+    var trans="零一二三四五六七八九十";
+
+
+
+    if(tens>1){
+        str=trans.charAt(tens);
+    }
+    if(tens!=0){
+        str+="十";
+    }
+    if(units!=0){
+        str += trans.charAt(units);
+    }
+
+    if(tens==0&&units==0){
+        str=trans[0];
+    }
+    
+    return str;
+}
+
+//繁体
+function numToTrad(n){
+    var str = "";
+    var units=parseInt(n%10);
+    var tens=parseInt(n/10);
+    var trans="零壹贰叁肆伍陆柒捌玖";
+    if(tens>1){
+        str=trans.charAt(tens);
+    }
+    if(tens!=0){
+        str+="拾";
+    }
+    if(units!=0){
+        str += trans.charAt(units);
+    }
+
+    if(tens==0&&units==0){
+        str=trans[0];
+    }
+    
+    return str;
+}
+
+
+//英文
+function numToEng(n){
+    var str = "";
+    var units=parseInt(n%10);
+    var tens=parseInt(n/10);
+    var trans=[
+        ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine","ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"],
+        ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"],
+    ];
+    if(n<20)
+    {
+        str=trans[0][n];
+    }else{
+        str=trans[1][tens-2];
+        if(units!=0){
+            str+=trans[0][units];
+        }
+    }
+
+    if(tens==0&&units==0){
+        str=trans[0][0];
+    }
+    return str;
+}
+
+
+
+function isLeapYear(year){
+    if(year % 4 == 0 && year %100 != 0 ||year % 400 == 0)
+    {
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+
+function getYear(type,year){
+    var res=""
+    var units=parseInt(year/1%10);
+    var tens=parseInt(year/10%10);
+    var hund=parseInt(year/100%10);
+    var thou=parseInt(year/1000%10);
+    switch(type){
+        case 0:
+        case 3:
+            res=year;
+            break;
+        case 1:
+            res=numToSimp(thou)+numToSimp(hund)+numToSimp(tens)+numToSimp(units);
+            break;
+        case 2:
+            res=numToTrad(thou)+numToTrad(hund)+numToTrad(tens)+numToTrad(units);
+            break;
+    }
+    return res;
+}
+
+
+
+
+
+
+/*
+    获取月份
+    参数：0 阿拉伯数字 1简体 2繁体 3英文
+*/
+function getMonths(type,month){
+    var months=new Array();
+    var monthsEng=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    var i=1;
+    switch (type) {
+        case 0:
+            for(i=month;i<=12;i++)
+            {
+                months.push(i);
+            }
+            for(i=1;i<month;i++)
+            {
+                months.push(i);
+            }
+            
+            break;
+        case 1:
+            for(i=month;i<=12;i++)
+            {
+                months.push(numToSimp(i));
+            }
+            for(i=1;i<month;i++)
+            {
+                months.push(numToSimp(i));
+            }
+            break;
+        case 2:
+
+            for(i=month;i<=12;i++)
+            {
+                months.push(numToTrad(i));
+            }
+            for(i=1;i<month;i++)
+            {
+                months.push(numToTrad(i));
+            }
+            break;
+        case 3:
+            for(i=month-1;i<12;i++)
+            {
+                months.push(monthsEng[i]);
+            }
+            for(i=0;i<month-1;i++)
+            {
+                months.push(monthsEng[i]);
+            }
+            break;
+    }
+    return months;
+}
+
+
+function getdays(type,year,month,day){
+    var days=new Array();
+    var j=1;
+    var isLeap=isLeapYear(year);
+    switch (type) {
+        case 0:
+        case 3:
+            for(j=day;j<=31;j++)
+            {
+                days.push(j)
+                if(month==2&&isLeap&&j==29){
+                    break;
+                }
+                if(month==2&&!isLeap&&j==28){
+                    break;
+                }
+                if((month==2||month==4||month==6||month==9||month==11)&&j==30){
+                    break;
+                }
+
+            }
+            for(j=1;j<day;j++){
+                days.push(j)
+            }
+            break;
+        case 1:
+            for(j=day;j<=31;j++)
+            {
+                days.push(numToSimp(j))
+                if(month==2&&isLeap&&j==29){
+                    break;
+                }
+                if(month==2&&!isLeap&&j==28){
+                    break;
+                }
+                if((month==2||month==4||month==6||month==9||month==11)&&j==30){
+                    break;
+                }
+
+            }
+
+            for(j=1;j<day;j++){
+                days.push(numToSimp(j))
+            }
+
+            break;
+        case 2:
+            for(j=day;j<=31;j++)
+            {
+                days.push(numToTrad(j))
+                if(month==2&&isLeap&&j==29){
+                    break;
+                }
+                if(month==2&&!isLeap&&j==28){
+                    break;
+                }
+                if((month==2||month==4||month==6||month==9||month==11)&&j==30){
+                    break;
+                }
+
+            }
+
+            for(j=1;j<day;j++){
+                days.push(numToTrad(j))
+            }
+
+            break;
+    }
+    return days;
+}
+
+
+
+
+
+
+function getShiChen(type,hour){
+    var shichen={
+        index:0,
+        str:""
+    };
+
+    switch(type){
+        case 0:
+            if(hour>=23||hour<1){
+                shichen.index=0;
+                shichen.str="23:00-1:00";
+            }
+            else if(hour>=1&&hour<3){
+                shichen.index=1;
+                shichen.str="1:00-3:00";
+            }
+            else if(hour>=3&&hour<5){
+                shichen.index=2;
+                shichen.str="3:00-5:00";
+            }
+            else if(hour>=5&&hour<7){
+                shichen.index=3;
+                shichen.str="5:00-7:00";
+            }
+            else if(hour>=7&&hour<9){
+                shichen.index=4;
+                shichen.str="7:00-9:00";
+            }
+            else if(hour>=9&&hour<11){
+                shichen.index=5;
+                shichen.str="9:00-11:00";
+            }
+            else if(hour>=11&&hour<13){
+                shichen.index=6;
+                shichen.str="11:00-13:00";
+            }
+            else if(hour>=13&&hour<15){
+                shichen.index=7;
+                shichen.str="13:00-15:00";
+            }
+            else if(hour>=15&&hour<17){
+                shichen.index=8;
+                shichen.str="15:00-17:00";
+            }
+            else if(hour>=17&&hour<19){
+                shichen.index=9;
+                shichen.str="17:00-19:00";
+            }
+            else if(hour>=19&&hour<21){
+                shichen.index=10;
+                shichen.str="19:00-21:00";
+            }
+            else if(hour>=21&&hour<23){
+                shichen.index=11;
+                shichen.str="21:00-23:00";
+            }
+            break;
+        case 1:
+        case 2:
+            if(hour>=23||hour<1){
+                shichen.index=0;
+                shichen.str="子时"
+            }
+            else if(hour>=1&&hour<3){
+                shichen.index=1;
+                shichen.str="丑时";
+            }
+            else if(hour>=3&&hour<5){
+                shichen.index=2;
+                shichen.str="寅时";
+            }
+            else if(hour>=5&&hour<7){
+                shichen.index=3;
+                shichen.str="卯时";
+            }
+            else if(hour>=7&&hour<9){
+                shichen.index=4;
+                shichen.str="辰时";
+            }
+            else if(hour>=9&&hour<11){
+                shichen.index=5;
+                shichen.str="巳时";
+            }
+            else if(hour>=11&&hour<13){
+                shichen.index=6;
+                shichen.str="午时";
+            }
+            else if(hour>=13&&hour<15){
+                shichen.index=7;
+                shichen.str="未时";
+            }
+            else if(hour>=15&&hour<17){
+                shichen.index=8;
+                shichen.str="申时";
+            }
+            else if(hour>=17&&hour<19){
+                shichen.index=9;
+                shichen.str="酉时";
+            }
+            else if(hour>=19&&hour<21){
+                shichen.index=10;
+                shichen.str="戌时";
+            }
+            else if(hour>=21&&hour<23){
+                shichen.index=11;
+                shichen.str="亥时";
+            }
+            break;
+        case 3:
+            if(hour>=23||hour<1){
+                shichen.index=0;
+                shichen.str="23pm to 1am"
+            }
+            else if(hour>=1&&hour<3){
+                shichen.index=1;
+                shichen.str="1am to 3am"
+            }
+            else if(hour>=3&&hour<5){
+                shichen.index=2;
+                shichen.str="3am to 5am"
+            }
+            else if(hour>=5&&hour<7){
+                shichen.index=3;
+                shichen.str="5pm to 7am"
+            }
+            else if(hour>=7&&hour<9){
+                shichen.index=4;
+                shichen.str="7pm to 9am"
+            }
+            else if(hour>=9&&hour<11){
+                shichen.index=5;
+                shichen.str="9pm to 11am"
+            }
+            else if(hour>=11&&hour<13){
+                shichen.index=6;
+                shichen.str="11am to 13pm"
+            }
+            else if(hour>=13&&hour<15){
+                shichen.index=7;
+                shichen.str="13pm to 15pm"
+            }
+            else if(hour>=15&&hour<17){
+                shichen.index=8;
+                shichen.str="15pm to 17pm"
+            }
+            else if(hour>=17&&hour<19){
+                shichen.index=9;
+                shichen.str="17pm to 19pm"
+            }
+            else if(hour>=19&&hour<21){
+                shichen.index=10; 
+                shichen.str="19pm to 21pm"
+            }
+            else if(hour>=21&&hour<23){
+                shichen.index=11;
+                shichen.str="21pm to 23pm"
+            }
+            break;
+    }
+
+
+
+    return shichen;
+}
+
+function getShiChens(type,shichen){
+    var shichens=new Array();
+    var i=0;
+    var shichen0=["23:00-1:00","1:00-3:00","3:00-5:00","5:00-7:00","7:00-9:00","9:00-11:00","11:00-13:00","13:00-15:00","15:00-17:00","17:00-19:00","19:00-21:00","21:00-23:00"];
+    var shichen1=["子时","丑时","寅时","卯时","辰时","巳时","午时","未时","申时","酉时","戌时","亥时"];
+    var shichen3=["23pm to 1am","1am to 3am","3am to 5am","5pm to 7am","7pm to 9am","9pm to 11am","11am to 13pm","13pm to 15pm","15pm to 17pm","17pm to 19pm","19pm to 21pm","21pm to 23pm"];
+    switch(type){
+        case 0:
+            for(i=shichen.index;i<12;i++){
+                shichens.push(shichen0[i]);
+            }
+            for(i=0;i<shichen.index;i++){
+                shichens.push(shichen0[i]);
+            }
+            break;
+        case 1:
+        case 2:
+            for(i=shichen.index;i<12;i++){
+                shichens.push(shichen1[i]);
+            }
+            for(i=0;i<shichen.index;i++){
+                shichens.push(shichen1[i]);
+            }
+            break;
+        case 3:
+            for(i=shichen.index;i<12;i++){
+                shichens.push(shichen3[i]);
+            }
+            for(i=0;i<shichen.index;i++){
+                shichens.push(shichen3[i]);
+            }
+            break;
+    }
+    return shichens;
+}
+
+function getMonthEng(month){
+    var monthsEng=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return monthsEng[month-1];
+}
+
+
+
+function getWeeks(type,week){
+    weeks=[];
+    weeksEng=["Sun","Mon","Tues","Wed","Thur","Fri","Sat"];
+    var i=0;
+    switch(type){
+        case 0:
+        case 1:
+        case 2:
+            for(i=week;i<7;i++){
+                weeks[i]="星期"+numToSimp(i);
+                if(i==0){
+                    weeks[i]="星期日"
+                }
+            }
+            for(i=0;i<week;i++){
+                weeks[i]="星期"+numToSimp(i);
+            }
+            break;
+        case 3:
+            for(i=week;i<7;i++)
+            {
+                weeks.push(weeksEng[i]);
+            }
+            for(i=0;i<week;i++)
+            {
+                weeks.push(weeksEng[i]);
+            }
+            break;
+    }
+    return weeks;
+}
+
+function getWeek(type,week){
+    weekEng=["Sun","Mon","Tues","Wed","Thur","Fri","Sat"];
+    res="";
+    switch(type){
+        case 0:
+        case 1:
+        case 2:
+            if(week==0){
+                res="日"
+            }else{
+                res=numToSimp(week);
+            }
+            break;
+        case 3:
+            res=weekEng[week];
+            break;
+    }
+    return res;
+}
+
+function getHours(type,hour){
+    var hours=new Array();
+    var i=0;
+    switch(type){
+        case 0:
+        case 3:
+            for(i=hour;i<24;i++){
+                hours.push(i);
+            }
+            for(i=0;i<hour;i++){
+                hours.push(i);
+            }
+            break;
+        case 1:
+            for(i=hour;i<24;i++){
+                hours.push(numToSimp(i));
+            }
+            for(i=0;i<hour;i++){
+                hours.push(numToSimp(i));
+            }
+            break;
+        case 2:
+            for(i=hour;i<24;i++){
+                hours.push(numToTrad(i));
+            }
+            for(i=0;i<hour;i++){
+                hours.push(numToTrad(i));
+            }
+            break;
+        // case 3:
+        //     for(i=hour;i<24;i++){
+        //         hours.push(numToEng(i));
+        //     }
+        //     for(i=0;i<hour;i++){
+        //         hours.push(numToEng(i));
+        //     }
+        //     break;
+    }
+    return hours;
+}
+
+
+function getMinutes(type,minute){
+    var minutes=new Array();
+    var i=0;
+    switch(type){
+        case 0:
+        case 3:
+            for(i=minute;i<60;i++){
+                minutes.push(i);
+            }
+            for(i=0;i<minute;i++){
+                minutes.push(i);
+            }
+            break;
+        case 1:
+            for(i=minute;i<60;i++){
+                minutes.push(numToSimp(i));
+            }
+            for(i=0;i<minute;i++){
+                minutes.push(numToSimp(i));
+            }
+            break;
+        case 2:
+            for(i=minute;i<60;i++){
+                minutes.push(numToTrad(i));
+            }
+            for(i=0;i<minute;i++){
+                minutes.push(numToTrad(i));
+            }
+            break;
+        // case 3:
+        //     for(i=minute;i<60;i++){
+        //         minutes.push(numToEng(i));
+        //     }
+        //     for(i=0;i<minute;i++){
+        //         minutes.push(numToEng(i));
+        //     }
+        //     break;
+    }
+    return minutes;
+}
+
+
+function getSeconds(type,second){
+    var seconds=new Array();
+    var i=0;
+    switch(type){
+        case 0:
+        case 3:
+            for(i=second;i<60;i++){
+                seconds.push(i);
+            }
+            for(i=0;i<second;i++){
+                seconds.push(i);
+            }
+            break;
+        case 1:
+            for(i=second;i<60;i++){
+                seconds.push(numToSimp(i));
+            }
+            for(i=0;i<second;i++){
+                seconds.push(numToSimp(i));
+            }
+            break;
+        case 2:
+            for(i=second;i<60;i++){
+                seconds.push(numToTrad(i));
+            }
+            for(i=0;i<second;i++){
+                seconds.push(numToTrad(i));
+            }
+            break;
+        // case 3:
+        //     for(i=second;i<60;i++){
+        //         seconds.push(numToEng(i));
+        //     }
+        //     for(i=0;i<second;i++){
+        //         seconds.push(numToEng(i));
+        //     }
+        //     break;
+    }
+    return seconds;
+}
+
+function isShichen(hour){
+    if(hour=="one h"||hour=="three h"||hour=="five h"||hour=="seven h"||hour=="nine h"||hour=="eleven h"||hour=="thirteen h"||hour=="fifteen h"||hour=="seventeen h"||hour=="nineteen h"||hour=="twentyone h"||hour=="twentythree h"
+    ||hour=="1时"||hour=="3时"||hour=="5时"||hour=="7时"||hour=="9时"||hour=="11时"||hour=="13时"||hour=="15时"||hour=="17时"||hour=="19时"||hour=="21时"||hour=="23时"
+    ||hour=="一时"||hour=="三时"||hour=="五时"||hour=="七时"||hour=="九时"||hour=="十一时"||hour=="十三时"||hour=="十五时"||hour=="十七时"||hour=="十九时"||hour=="二十一时"||hour=="二十三时"
+    ||hour=="壹时"||hour=="叁时"||hour=="伍时"||hour=="柒时"||hour=="玖时"||hour=="拾壹时"||hour=="拾叁时"||hour=="拾伍时"||hour=="拾柒时"||hour=="拾玖时"||hour=="贰拾壹时"||hour=="贰拾叁时"
+    ||hour=="1 h"||hour=="3 h"||hour=="5 h"||hour=="7 h"||hour=="9 h"||hour=="11 h"||hour=="13 h"||hour=="15 h"||hour=="17 h"||hour=="19 h"||hour=="21 h"||hour=="23 h"){
+        return true;
+    }
+    return false;
+}
+
+
+function updateDays(type,year,month,day){
+    var days=new Array();
+    var j=1;
+    var isLeap=isLeapYear(year);
+    switch (type) {
+        case 0:
+        case 3:
+            for(j=day;j<=31;j++)
+            {
+                days.push(j)
+                if(month==2&&isLeap&&j==29){
+                    break;
+                }
+                if(month==2&&!isLeap&&j==28){
+                    break;
+                }
+                if((month==2||month==4||month==6||month==9||month==11)&&j==30){
+                    break;
+                }
+
+            }
+            for(j=1;j<day;j++){
+                days.push(j)
+            }
+            break;
+        case 1:
+            for(j=1;j<=31;j++)
+            {
+                days.push(numToSimp(j))
+                if(month==2&&isLeap&&j==29){
+                    break;
+                }
+                if(month==2&&!isLeap&&j==28){
+                    break;
+                }
+                if((month==2||month==4||month==6||month==9||month==11)&&j==30){
+                    break;
+                }
+
+            }
+
+            for(j=1;j<day;j++){
+                days.push(numToSimp(j))
+            }
+
+            break;
+        case 2:
+            for(j=1;j<=31;j++)
+            {
+                days.push(numToTrad(j))
+                if(month==2&&isLeap&&j==29){
+                    break;
+                }
+                if(month==2&&!isLeap&&j==28){
+                    break;
+                }
+                if((month==2||month==4||month==6||month==9||month==11)&&j==30){
+                    break;
+                }
+
+            }
+
+            for(j=1;j<day;j++){
+                days.push(numToTrad(j))
+            }
+
+            break;
+    }
+    return days;
+}
+
+
+
+function getFirstDay(type){
+    day=1;
+    switch (type) {
+        case 1:
+            day=numToSimp(day);
+            break;
+        case 2:
+            day=numToTrad(day);
+            break;
+    }
+    return day;
+}
+    </script>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            /* background-color: black; */
+            /* color: white; */
+            background: url("./timg.jpg") no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            color: #F5F4F6;
+            font-size: 12px;
+            font-weight: bold;
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            
+            
+        }
+
+        .current{
+            color: #D1A3F7;
+        }
+
+
+        .main-content{
+            position: absolute; 
+            top: 95%;
+            left: 105%;
+        }
+
+
+        .main-content .year{
+            position: relative;
+            top: -13px;
+            left: -38px;
+            text-align: center
+        }
+
+        .main-content .year span{
+            position: absolute;
+            width: 80px;
+        }
+
+
+
+        .main-content .month{
+            position: relative;
+            top: -13px;
+            left: 40px;
+        }
+
+        .month span{
+            position: absolute;
+            width: 200px;
+            
+        }
+
+
+
+
+        .main-content .day{
+            position: relative;
+            top: -13px;
+            left: 70px;
+        }
+
+        .day span{
+            position: absolute;
+            width: 200px;
+            
+        }
+
+
+
+
+        .main-content .week{
+            position: relative;
+            top: -13px;
+            left: 120px;
+        }
+        .week span{
+            position: absolute;
+            width: 200px;
+            
+        }
+
+
+        .main-content .shichen{
+            position: relative;
+            top: -13px;
+            left: 160px;
+        }
+        .shichen span{
+            position: absolute;
+            width: 200px;
+            
+        }
+
+
+        .main-content .hour{
+            position: relative;
+            top: -13px;
+            left: 195px;
+        }
+        .hour span{
+            position: absolute;
+            width: 200px;
+            
+        }
+
+
+        .main-content .minute{
+            position: relative;
+            top: -13px;
+            left: 235px;
+        }
+        .minute span{
+            position: absolute;
+            width: 200px;
+            
+        }
+
+
+        .main-content .second{
+            position: relative;
+            top: -13px;
+            left: 290px;
+        }
+        .second span{
+            position: absolute;
+            width: 200px;
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="year">
+            <!-- <span>2019</span> -->
+        </div> 
+        <div class="month"></div>
+        <div class="day"></div>
+        <div class="week"></div>
+        <div class="shichen"></div>
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+    </div>
+
+
+</body>
+</html>
+
+

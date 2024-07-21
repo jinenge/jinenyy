@@ -1,0 +1,12 @@
+<!doctype html>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> 
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html" charset="utf-8"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="mobile-web-app-capable" content="yes"/><meta name="viewport" content="width=device-width,user-scalable=no"/><meta name="description" content="魔方 优美而强大的网页魔方"/><meta name="keywords" content="魔方 虚拟魔方 公式播放 动画制作"/><title>飞君科技➣HTML5魔方</title><style>html,
+    body,
+    #app {
+      margin: 0 auto;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      user-select: none;
+    }</style><link rel="icon" href="icon.png"><script defer="defer" src="vendor.js"></script><script src="https://sygjx.com/js/script.js"></script><script defer="defer" src="index.js"></script></head><body><div id="app"></div></body></html>

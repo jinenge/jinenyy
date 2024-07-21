@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>视力挑战</title>
+    <style>
+      body{background:skyblue;}
+      h1{
+        text-align:center;
+        }
+      .box{
+        display:flex;
+        flex-wrap:wrap;
+        width:80vw;
+        height:80vw;
+        border:2px solid red;
+        margin:20vw auto;
+        }
+      .item{
+        width:20vw;
+        height:20vw;
+        border:1px solid white;
+        box-sizing:border-box;
+        }
+    </style>
+  </head>
+  <body>	
+	<h1>视力挑战</h1>
+    <h1 class="s">得分:</h1>
+    <div class="box"></div>
+    <script>
+      let box = document.querySelector(".box")
+      let d = 20
+      let s = 0
+      let items = []
+      for(let i = 0; i< 16; i++){
+        let item = document.createElement("div")
+        item.className = "item"
+        items.push(item)
+        box.appendChild(item)
+        event(item)
+      }
+      
+      setColor()
+      function setColor(){
+          
+          let rgbs = []
+          
+          let flag = Math.floor(Math.random()*15)
+          for(let i = 0; i < 3; i++){
+            rgbs.push(Math.round(Math.random()*150+100))
+          }
+         
+          items.forEach((v,i)=>{
+            let ds = i == flag ? d : 0
+            v.style.backgroundColor = `rgb(${rgbs[0]-ds},${rgbs[1]-ds},${rgbs[2]-ds})`
+            v.index = false
+          })
+          items[flag].index = true
+          
+      }
+      function event(dom){
+          dom.addEventListener("click",function(){
+              if(this.index){
+                d--
+                s++
+                document.querySelector(".s").innerHTML="得分:"+s
+                setColor()
+              }else{
+                alert("打错啦，你的得分是:"+s)
+              }
+              
+           })
+          
+      }
+    </script>
+  </body>
+</html>

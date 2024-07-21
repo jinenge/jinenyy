@@ -1,0 +1,105 @@
+一<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+      body{
+        background-color:black;
+        }
+      #my{
+        border-radius:100%;
+        width:180px;
+        height:180px;
+        margin-top:60px;
+        margin-left:60px;
+        }
+      #cz{
+        position:absolute;
+        width:100px;
+        left:200px;
+        top:230px;
+        transform-origin:right bottom;
+        }
+      h2{
+        color:white;
+        margin-top:120px;
+        }
+      .n{
+        margin-left:70px;
+        margin-top:-220px;
+        position:relative;
+        color:transparent;
+        }
+      
+      
+      @keyframes muyu{
+        0%{}
+        50%{transform:scale(0.9);}
+        100%{transform:scale(1);}
+        }
+      @keyframes chui{
+        0%{}
+        50%{transform:rotate(-12deg);}
+        100%{transform:rotate(0deg);}
+        }
+      @keyframes jy{
+        0%{bottom:0px;color:transparent;}
+        100%{bottom:20px;color:white;}
+        }
+    </style>
+  </head>
+  <body>
+    <center>	
+      <h2 id="gdz">功德:0</h2>
+      <img id="cz" src="chui.png"/>
+      <br>
+    </center>
+    <img id="my" src="muyu.png"/>
+    <p class="n" id="n">功德+1</p>
+    <script>
+      
+      var gd=0;
+      
+      var img=document.getElementById("my")
+      var ch=document.getElementById("cz")
+      var jy=document.getElementById("n")
+      
+      
+      img.onclick=function (){
+          gd+=1;
+          document.getElementById("gdz").innerHTML="功德:"+gd;
+          
+          var mp3url="muyu.mp3";
+          var player=new Audio(mp3url);
+          player.play();
+          
+          img.animate([
+            {transform:"scale(0.9)"},
+            {transform:"scale(1)"}
+          ],{
+            duration:200});
+          ch.animate([
+            {transform:"rotate(-12deg)"},
+            {transform:"rotate(0deg)"}
+          ],{
+            duration:200});
+          jy.animate({
+            color:"white",
+            transform:["translateY(20px)","translateY(-20px)"],
+            opacity:[0,1,0]
+          },{
+            duration:500});
+      }
+      
+      
+      function qc(){
+          img.style.cssText="";
+          ch.style.cssText="";
+      }
+      function sc(){
+          var box=document.querySelector("p");
+          box.remove();
+      }
+    </script>
+  </body>
+</html>

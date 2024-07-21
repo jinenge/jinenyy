@@ -1,0 +1,25 @@
+
+{
+	"appName": "百宝箱2.5（修复版）",
+	"appPackageName": "top.webcat.app726120",
+	"appVersionName": "2.5",
+	"appVersionCode": 100000,
+	"data": {		
+		"启用顶栏": false,
+		"顶栏标题": "百宝箱2.5（修复版）",
+		"顶栏颜色": "#FF2C2E43",
+		"横屏": false,
+		"显示状态栏": true,
+		"启用进度条": true,
+		"进度条颜色": "#00000000",
+		"支持打开外部应用": true,
+		"提示打开外部应用": false,
+		"启动页面": "index.html"
+	},
+	"indexPages": [
+		
+	],
+	"extraHeaders": {
+		
+	}
+}
