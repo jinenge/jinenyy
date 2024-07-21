@@ -7,13 +7,6 @@
    <br>
    
 
-         <!--标题-->
-<table width="100%" border="0" align="center"><tr><td align="center">
-<b id="nr"><span class="nav-item"><a class="nav-link" href="./免责声明.html">
-<i class="fa-solid fa-shield-check" style="color:#3232CD;" aria-hidden="true"></i>
-<font color="#663333">免责声明条款协议</font><tr> </td></tr></table><style>
-/*进恩哥七彩字*/
-#nr{ font-size:15px; margin: 0; background: -webkit-linear-gradient(left, #ffffff, #ff0000 6.25%, #ff7d00 12.5%, #ffff00 18.75%, #00ff00 25%, #00ffff 31.25%, #0000ff 37.5%, #ff00ff 43.75%, #ffff00 50%, #ff0000 56.25%, #ff7d00 62.5%, #ffff00 68.75%, #00ff00 75%, #00ffff 81.25%, #0000ff 87.5%, #ff00ff 93.75%, #ffff00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% 100%; animation: masked-animation 2s infinite linear; } @keyframes masked-animation { 0% { background-position: 0 0; } 100% { background-position: -100%, 0; } }</style></b>
 <h2>关于我们</h2>
 <p><p><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /></p>
 <p><a href="https://jinenyy.vip/img/icon/logo.png"></a>
