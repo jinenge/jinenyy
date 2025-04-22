@@ -22,10 +22,10 @@
 <p>3、如果本客户端涉及到您的版权问题或者其他问题您可以向我们进行反馈处理，<a href="mailto:jinenge@foxmail.com"><i class="fa fa-envelope"></i>点击我给我发送邮箱处理</a></p>
 </div></div>
 <p>如果您觉得本平台参考的信息对您有帮助，您可以对本平台作者进行赞赏！
-<img src="./img/icon/weixin.jpg" alt="微信赞赏" />
-<img src="./img/icon/zhifubao.jpg" alt="支付宝赞赏" /></p>
+<img src="https://jinenyy.vip/img/icon/weixin.jpg" alt="微信赞赏" />
+<img src="https://jinenyy.vip/img/icon/zhifubao.jpg" alt="支付宝赞赏" /></p>
 <p>如需进行咨询本官网站长，请通过以下二维码添加微信咨询。
-<img src="./img/icon/tianjiaweixin.jpg" alt="添加微信" /></p>
+<img src="https://jinenyy.vip/img/icon/tianjiaweixin.jpg" alt="添加微信" /></p>
 
 <table width="100%" border="0" align="center">
 <tr><td align="center"><span class="nav-item">
