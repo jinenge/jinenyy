@@ -1,7 +1,7 @@
 # 进恩哥资源仓库
 ## 官网Android客户端更新地址
    <br>
-   <a href="https://jinenyy.vip/update.html">
+   <a href="./update.html">
      点击进入更新通道 
   </a>
    <br>
@@ -9,7 +9,7 @@
 
 <h2>关于我们</h2>
 <p><p><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /></p>
-<p><a href="https://jinenyy.vip/img/icon/logo.png"></a>
+<p><a href="./img/icon/logo.png"></a>
 进恩哥资源仓库，是一个网络资源平台，本项目由个人开源项目，仅供参考使用，请于24小时内将本站下载的客户端从您的设备进行删除/卸载操作。</p>
 <p>1.我们开源本平台仅用于测试HTML+PHP项目的个人主页项目，整理储存一些刷机固件以及一些刷机工具，玩机软件等网络上稀有的资源整理收集，并非用于破解以及贩卖盗版资源等行为。</p>
 <p>2.我们所收集的资源均由各大网盘厂商储存，网盘厂商的储存方式如：XXX云盘中的分享链接，通过本平台使用的Alist驱动或kodbox驱动提供的挂载方式进行挂载，然而实现Alist云盘下载以及浏览功能展示以及kodbox文件管理列表的展示。</p>
@@ -29,9 +29,9 @@
 
 <table width="100%" border="0" align="center">
 <tr><td align="center"><span class="nav-item">
-<a class="nav-link" href="https://icp.gov.moe/?keyword=20238787">
+<a class="nav-link" href="https://icp.gov.moe/?keyword=20246808">
  <i class="fa-solid fa-shield-check" style="color: #9F5F9F;" aria-hidden="true">
 </i><font color="#9F5F9F">
-萌ICP备20238787号</font>
+萌ICP备20246808号</font>
 </body>
 </html>
