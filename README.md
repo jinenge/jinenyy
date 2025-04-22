@@ -1,7 +1,7 @@
 # 进恩哥资源仓库
 ## 官网Android客户端更新地址
    <br>
-   <a href="./update.html">
+   <a href="https://jinenyy.vip/update.html">
      点击进入更新通道 
   </a>
    <br>
