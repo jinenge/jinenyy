@@ -1,0 +1,247 @@
+{
+    "header": [
+        " *   ",
+        " *   如非需要调试，本文件可删除",
+        " *   非专业人员可将本文件删除",
+        " *   详细介绍请参考: https://bazhan.wang/faq#INFO-JSON",
+        " *   "
+    ],
+    "resources": [
+        {
+            "url": "http://guozhivip.com/jzg/",
+            "path": "index.html",
+            "saved": true,
+            "size": 53851,
+            "children": [
+                {
+                    "url": "http://guozhivip.com/jzg/img/crash.png",
+                    "path": "img/crash.png",
+                    "saved": true,
+                    "size": 1719
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/img/hi-hat.png",
+                    "saved": false
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/img/snare.png",
+                    "saved": false
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/img/right-tom.png",
+                    "saved": false
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/img/left-tom.png",
+                    "saved": false
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/img/floor-tom.png",
+                    "saved": false
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/img/kick.png",
+                    "saved": false
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/js/jquery-1.12.1.min.js",
+                    "path": "js/jquery-1.12.1.min.js",
+                    "saved": true,
+                    "size": 97403
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/js/TweenMax.min.js",
+                    "path": "js/TweenMax.min.js",
+                    "saved": true,
+                    "size": 104797
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/js/script.js",
+                    "path": "js/script.js",
+                    "saved": true,
+                    "size": 11081
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/css/normalize.css",
+                    "path": "css/normalize.css",
+                    "saved": true,
+                    "size": 1825
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/fonts/font-awesome-4.3.0/css/font-awesome.min.css",
+                    "path": "css/font-awesome.min.css",
+                    "saved": true,
+                    "size": 26668,
+                    "children": [
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/font-awesome-4.3.0/fonts/fontawesome-webfont.eot?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.eot",
+                            "saved": true,
+                            "size": 68875
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/font-awesome-4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.eot",
+                            "saved": true,
+                            "size": 68875
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/font-awesome-4.3.0/fonts/fontawesome-webfont.woff2?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.woff2",
+                            "saved": true,
+                            "size": 64464
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/font-awesome-4.3.0/fonts/fontawesome-webfont.woff?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.woff",
+                            "saved": true,
+                            "size": 81284
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/font-awesome-4.3.0/fonts/fontawesome-webfont.ttf?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.ttf",
+                            "saved": true,
+                            "size": 138204
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/font-awesome-4.3.0/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular",
+                            "path": "img/fontawesome-webfont.svg",
+                            "saved": true,
+                            "size": 355981
+                        }
+                    ]
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/css/styles-min.css",
+                    "path": "css/styles-min.css",
+                    "saved": true,
+                    "size": 7719,
+                    "children": [
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/codropsicons/codropsicons.eot",
+                            "path": "fonts/codropsicons.eot",
+                            "saved": true,
+                            "size": 2244
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/codropsicons/codropsicons.woff",
+                            "path": "fonts/codropsicons.woff",
+                            "saved": true,
+                            "size": 2072
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/codropsicons/codropsicons.ttf",
+                            "path": "fonts/codropsicons.ttf",
+                            "saved": true,
+                            "size": 2060
+                        },
+                        {
+                            "url": "http://guozhivip.com/jzg/fonts/codropsicons/codropsicons.svg#codropsicons",
+                            "path": "img/codropsicons.svg",
+                            "saved": true,
+                            "size": 3612
+                        }
+                    ]
+                },
+                {
+                    "url": "http://guozhivip.com/images/ic.ico",
+                    "path": "ic.ico",
+                    "saved": true,
+                    "size": 4286
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/mp3/Big-Rack-Tom.mp3",
+                    "path": "media/Big-Rack-Tom.mp3",
+                    "saved": true,
+                    "size": 27084
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/mp3/Crash.mp3",
+                    "path": "media/Crash.mp3",
+                    "saved": true,
+                    "size": 91345
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/mp3/Floor-Tom.mp3",
+                    "path": "media/Floor-Tom.mp3",
+                    "saved": true,
+                    "size": 27084
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/mp3/Hi-Hat-Closed.mp3",
+                    "path": "media/Hi-Hat-Closed.mp3",
+                    "saved": true,
+                    "size": 27084
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/mp3/Kick.mp3",
+                    "path": "media/Kick.mp3",
+                    "saved": true,
+                    "size": 27084
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/mp3/Small-Rack-Tom.mp3",
+                    "path": "media/Small-Rack-Tom.mp3",
+                    "saved": true,
+                    "size": 27084
+                },
+                {
+                    "url": "http://guozhivip.com/jzg/mp3/Snare.mp3",
+                    "path": "media/Snare.mp3",
+                    "saved": true,
+                    "size": 27084
+                }
+            ]
+        }
+    ],
+    "alias": "guozhivip-com-fqvy6dik",
+    "info": {
+        "remark": [],
+        "title": "架子鼓-演奏属于你自己的音乐~",
+        "domain": "guozhivip.com",
+        "origin": "http://guozhivip.com",
+        "ip": "121.40.59.158",
+        "main": "index.html",
+        "url": "http://guozhivip.com/jzg/",
+        "totalSize": "1.35 MB",
+        "request": {
+            "headers": {
+                "accept": "text/html,*/*",
+                "accept-language": "zh-CN,zh;q=0.9",
+                "cache-control": "no-cache",
+                "cookie": "",
+                "referer": "http://guozhivip.com/jzg/",
+                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+                "x-scraper-website": "https://bazhan.wang/"
+            }
+        },
+        "response": {
+            "responseUrl": "http://guozhivip.com/jzg/",
+            "redirects": [],
+            "statusCode": 200,
+            "headers": {
+                "date": "Mon, 30 Jan 2023 11:14:15 GMT",
+                "server": "Apache",
+                "last-modified": "Sat, 10 Oct 2020 13:50:17 GMT",
+                "etag": "\"1e02e7-c91d-5b15158647840\"",
+                "accept-ranges": "bytes",
+                "vary": "Accept-Encoding,User-Agent",
+                "content-length": "10931",
+                "connection": "close",
+                "content-type": "text/html"
+            }
+        },
+        "time": {
+            "start": "2023-01-30T11:14:14.592Z",
+            "end": "2023-01-30T11:14:16.788Z"
+        }
+    },
+    "options": {
+        "url": "http://guozhivip.com/jzg/",
+        "referer": "",
+        "cookies": "",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+        "formatter": [],
+        "filenameGenerator": "byType"
+    }
+}
