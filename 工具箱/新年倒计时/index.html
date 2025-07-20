@@ -184,11 +184,11 @@
         <div class="container">
             <div class="title">新年倒计时</div>
             <div class="ydcard" id="ydcard">
-                <div class="jl1">距离 2025 年元旦：</div>
+                <div class="jl1">距离 2026 年元旦：</div>
                 <div id="jlyd" class="jlyd"></div>
             </div>
             <div class="cjcard" id="cjcard">
-                <div class="jl2">距离 2025 年春节：</div>
+                <div class="jl2">距离 2026 年春节：</div>
                 <div id="jlcj" class="jlyd"></div>
             </div>
             <div class="sign"></div>
@@ -208,8 +208,8 @@
         window.setInterval('kpdw();', 10); //每隔10毫秒定位一次卡片
         //倒计时源码来自：https://blog.csdn.net/ednah/article/details/54755594
         function freshTime() {
-            var ydTime = new Date("2025/1/1,00:00:00"); //元旦时间
-            var cjTime = new Date("2025/1/29,00:00:00"); //春节时间
+            var ydTime = new Date("2026/1/1,00:00:00"); //元旦时间
+            var cjTime = new Date("2026/2/17,00:00:00"); //春节时间
             var nowTime = new Date(); //当前时间
             var ydLeftTime = parseInt((ydTime.getTime() - nowTime.getTime()) / 1000); //距离元旦的时间
             var cjLeftTime = parseInt((cjTime.getTime() - nowTime.getTime()) / 1000); //距离春节的时间
@@ -229,7 +229,7 @@
             }
             //当春节到达时
             if (cjLeftTime <= 0) {
-                document.getElementById("jlcj").innerHTML = "春节已至！";
+                document.getElementById("jlcj").innerHTML = "祝大家新年快乐，马年大吉！";
             }
         }
         freshTime()
