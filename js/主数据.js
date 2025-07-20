@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
         iziToast.show({
             timeout: 2000,
             title: hello,
-            message: '欢迎来到进恩哥资源仓库官方网站'
+            message: '😎欢迎来到进恩哥资源仓库官网'
         });
     }, 30);
 }, false)
@@ -93,15 +93,15 @@ fetch('https://v1.hitokoto.cn?max_length=24')
 //获取天气
 //每日限量 100 次
 //请前往 https://www.tianqiapi.com/ 申请（免费）
-fetch('http://v1.yiketianqi.com/api?unescape=1&version=v61&appid=75484426&appsecret=Lj9AquXl')
+fetch('http://gfeljm.tianqiapi.com/free/v2030?city=&cityid=&adcode=130200000000&appid=75484426&appsecret=Lj9AquXl&lng=&lat=&aqi=&hours=')
     .then(response => response.json())
     .then(data => {
         $('#wea_text').html(data.wea)
         $('#city_text').html(data.city)
         $('#tem_night').html(data.tem_night)
         $('#tem_day').html(data.tem_day)
-        // $('#win_text').html(data.win)
-        // $('#win_speed').html(data.win_speed)
+        $('#win_text').html(data.win)
+        $('#win_speed').html(data.win_speed)
     })
     .catch(console.error)
 
@@ -274,7 +274,7 @@ document.oncontextmenu = function () {
     iziToast.show({
         timeout: 2000,
         iconUrl: './img/icon/warn.png',
-        message: '为了叼毛更好的浏览体验，本站禁用右键'
+        message: '你长按此功能干嘛😁'
     });
     return false;
 }
@@ -316,17 +316,10 @@ var styleContent = `
 color: rgb(30,152,255);
 `
 var title1 = '进恩哥资源仓库'
-var title2 = `
- _____ __  __  _______     ____     __
-|_   _|  \\/  |/ ____\\ \\   / /\\ \\   / /
-  | | | \\  / | (___  \\ \\_/ /  \\ \\_/ / 
-  | | | |\\/| |\\___ \\  \\   /    \\   /  
- _| |_| |  | |____) |  | |      | |   
-|_____|_|  |_|_____/   |_|      |_|                                                     
-`
+var title2 = ``
 var content = `
-版 本 号：1.0.0
-更新日期：2024-04-12
+版 本 号：1.1.3
+更新日期：2025
 
 更新说明：
 1. 新增 壁纸个性化设置
@@ -335,8 +328,7 @@ var content = `
 4. 优化 页面加载缓慢
 5. 优化 音乐延迟加载
 
-原作者主页:  https://www.imsyy.top
-原作者Github:  https://github.com/imsyy/home
+Github来源地址:  https://kkgithub.com/jinenge/jinenyy
 `
 console.log(`%c${title1} %c${title2}
 %c${content}`, styleTitle1, styleTitle2, styleContent)
