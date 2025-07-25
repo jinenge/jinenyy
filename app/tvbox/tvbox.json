@@ -1,11 +1,11 @@
 {
-  "spider": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/jinenyy.jar;md5;e85b50b0b712b56b2ef446867431fa9c",
-  "wallpaper": "https://jinenyy.vip/wallpaper/",
+  "spider": "/配置/jinenyy.jar;md5;e85b50b0b712b56b2ef446867431fa9c",
+  "wallpaper": "https://www.jinenyy.vip/wallpaper/",
   "logo": "https://jinenyy.vip/img/icon/logo.png",
   "sites": [
     {
       "key": "drpy_js_豆瓣",
-      "name": "🧿²º²⁴┃主页推荐",
+      "name": "🧿²⁰²⁵┃主页推荐",
       "type": 3,
       "api": "csp_Douban",
       "searchable": 0
@@ -32,7 +32,7 @@
       "name": "🎃┃南瓜┃影视",
       "type": 3,
       "playerType": "2",
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/ng_open.js"
+      "api": "/配置/ng_open.js"
     },
     {
       "key": "新视觉",
@@ -135,8 +135,8 @@
       "key": "FreeOK",
       "name": "️️👌┃Fre┃影视",
       "type": 3,
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/drpy2.min.js",
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/FreeOK.js"
+      "api": "/配置/drpy2.min.js",
+      "ext": "/配置/FreeOK.js"
     },
     {
       "key": "毛驴",
@@ -178,8 +178,8 @@
       "name": "☁️┃云播┃影视",
       "type": 3,
       "playerType": "2",
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/drpy2.min.js",
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/TVB云播.js"
+      "api": "/配置/drpy2.min.js",
+      "ext": "/配置/TVB云播.js"
     },
     {
       "key": "csp_Xb6v",
@@ -193,15 +193,15 @@
       "name": "🛣┃低端┃影视",
       "type": 3,
       "playerType": "2",
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/drpy2.min.js",
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/ddys.js"
+      "api": "/配置/drpy2.min.js",
+      "ext": "/配置/ddys.js"
     },
     {
       "key": "虎虎",
       "name": "🐯┃虎虎┃影视",
       "type": 3,
       "api": "csp_XBPQ",
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/虎虎.json"
+      "ext": "/配置/虎虎.json"
     },
     {
       "key": "黑狐",
@@ -276,7 +276,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/alist.json"
+      "ext": "/配置/alist.json"
     },
     {
       "key": "csp_BookTing",
@@ -350,8 +350,8 @@
       "key": " 在线┃直播1",
       "name": "📺┃竞技┃直播",
       "type": 3,
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/drpy2.min.js",
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/JustLive.js",
+      "api": "/lib/drpy2.min.js",
+      "ext": "/lib/JustLive.js",
       "gridview": "0-0-H",
       "style": {
         "type": "rect",
@@ -375,13 +375,13 @@
       "key": "drpy_js_310直播",
       "name": "🏀┃体育┃直播",
       "type": 3,
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/drpy2.min.js",
+      "api": "/lib/drpy2.min.js",
       "changeable": 0,
       "gridview": 3,
       "style": {
         "type": "list"
       },
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/310直播.js"
+      "ext": "/lib/310直播.js"
     },
     {
       "key": "米搜",
@@ -426,15 +426,15 @@
       "key": "drpy_哔哩",
       "name": "🅱┃哔哩┃合集",
       "type": 3,
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/drpy2.min.js",
+      "api": "/lib/drpy2.min.js",
       "playerType": 1,
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/B站.js"
+      "ext": "/lib/B站.js"
     },
     {
       "key": "儿童",
       "name": "📚┃儿童┃启蒙",
       "type": 3,
-      "api": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/ddrpy2.m.js",
+      "api": "/lib/ddrpy2.m.js",
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
@@ -442,7 +442,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/兔小贝.js"
+      "ext": "/lib/兔小贝.js"
     },
     {
       "key": "少儿",
@@ -456,7 +456,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/少儿教育.json"
+      "ext": "/lib/少儿教育.json"
     },
     {
       "key": "小学",
@@ -470,7 +470,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/小学课堂.json"
+      "ext": "/lib/小学课堂.json"
     },
     {
       "key": "初中",
@@ -484,7 +484,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/初中课堂.json"
+      "ext": "/lib/初中课堂.json"
     },
     {
       "key": "高中",
@@ -498,7 +498,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/高中课堂.json"
+      "ext": "/lib/高中课堂.json"
     },
     {
       "key": "push_agent",
@@ -597,7 +597,7 @@
       "name": "live",
       "type": 0,
       "playerType": 1,
-      "url": "https://rom-1251275542.cos.ap-guangzhou.myqcloud.com/lib/tvlive.txt",
+      "url": "/lib/tvlive.txt",
       "epg": "http://epg.112114.xyz/?ch={name}&date={date}",
       "logo": "https://epg.112114.xyz/logo/{name}.png"
     }
