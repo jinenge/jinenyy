@@ -1,5 +1,5 @@
 {
-  "spider": "/配置/jinenyy.jar;md5;e85b50b0b712b56b2ef446867431fa9c",
+  "spider": "配置/jinenyy.jar;md5;e85b50b0b712b56b2ef446867431fa9c",
   "wallpaper": "https://www.jinenyy.vip/wallpaper/",
   "logo": "https://jinenyy.vip/img/icon/logo.png",
   "sites": [
@@ -135,8 +135,8 @@
       "key": "FreeOK",
       "name": "️️👌┃Fre┃影视",
       "type": 3,
-      "api": "/配置/drpy2.min.js",
-      "ext": "/配置/FreeOK.js"
+      "api": "配置/drpy2.min.js",
+      "ext": "配置/FreeOK.js"
     },
     {
       "key": "毛驴",
@@ -178,8 +178,8 @@
       "name": "☁️┃云播┃影视",
       "type": 3,
       "playerType": "2",
-      "api": "/配置/drpy2.min.js",
-      "ext": "/配置/TVB云播.js"
+      "api": "配置/drpy2.min.js",
+      "ext": "配置/TVB云播.js"
     },
     {
       "key": "csp_Xb6v",
@@ -193,15 +193,15 @@
       "name": "🛣┃低端┃影视",
       "type": 3,
       "playerType": "2",
-      "api": "/配置/drpy2.min.js",
-      "ext": "/配置/ddys.js"
+      "api": "配置/drpy2.min.js",
+      "ext": "配置/ddys.js"
     },
     {
       "key": "虎虎",
       "name": "🐯┃虎虎┃影视",
       "type": 3,
       "api": "csp_XBPQ",
-      "ext": "/配置/虎虎.json"
+      "ext": "配置/虎虎.json"
     },
     {
       "key": "黑狐",
@@ -276,7 +276,7 @@
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
-      "ext": "/配置/alist.json"
+      "ext": "配置/alist.json"
     },
     {
       "key": "csp_BookTing",
@@ -375,13 +375,13 @@
       "key": "drpy_js_310直播",
       "name": "🏀┃体育┃直播",
       "type": 3,
-      "api": "/lib/drpy2.min.js",
+      "api": "配置/drpy2.min.js",
       "changeable": 0,
       "gridview": 3,
       "style": {
         "type": "list"
       },
-      "ext": "/lib/310直播.js"
+      "ext": "配置/310直播.js"
     },
     {
       "key": "米搜",
@@ -426,15 +426,15 @@
       "key": "drpy_哔哩",
       "name": "🅱┃哔哩┃合集",
       "type": 3,
-      "api": "/lib/drpy2.min.js",
+      "api": "配置/drpy2.min.js",
       "playerType": 1,
-      "ext": "/lib/B站.js"
+      "ext": "配置/B站.js"
     },
     {
       "key": "儿童",
       "name": "📚┃儿童┃启蒙",
       "type": 3,
-      "api": "/lib/ddrpy2.m.js",
+      "api": "配置/ddrpy2.m.js",
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
@@ -442,7 +442,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "/lib/兔小贝.js"
+      "ext": "配置/兔小贝.js"
     },
     {
       "key": "少儿",
@@ -456,7 +456,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "/lib/少儿教育.json"
+      "ext": "配置/少儿教育.json"
     },
     {
       "key": "小学",
@@ -470,7 +470,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "/lib/小学课堂.json"
+      "ext": "配置/小学课堂.json"
     },
     {
       "key": "初中",
@@ -484,7 +484,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "/lib/初中课堂.json"
+      "ext": "配置/初中课堂.json"
     },
     {
       "key": "高中",
@@ -498,7 +498,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "/lib/高中课堂.json"
+      "ext": "配置/高中课堂.json"
     },
     {
       "key": "push_agent",
