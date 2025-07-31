@@ -7,25 +7,6 @@
    <br>
 
 
-<h2>使用客户端说明：</h2>
-<p>1、如在客户端中某些功能无法打开，则您的访问次数达到了次数，每个IP每天仅支持访问共50次刷新左右，超过次数则显示无法访问本站点，请熟知。</p>
-<p>2、如果您看到客户端好多功能失效或者访问不了，可能您用的是旧版本客户端，则您需要对本客户端清除数据，重新运行客户端，如果还是不行，则需要卸载手中的版本后再次到官网从新下载新版进行安装。</p>
-<p>3、如果本客户端涉及到您的版权问题或者其他问题您可以向我们进行反馈处理，<a href="mailto:jinenge@foxmail.com"><i class="fa fa-envelope"></i>点击我给我发送邮箱处理</a></p>
-</div></div>
-<p>如果您觉得本平台参考的信息对您有帮助，您可以对本平台作者进行赞赏！
-<img src="./img/icon/weixin.jpg" alt="微信赞赏" />
-<img src="./img/icon/zhifubao.jpg" alt="支付宝赞赏" /></p>
-<p>如需进行咨询本官网站长，请通过以下二维码添加微信咨询。
-<img src="./img/icon/tianjiaweixin.jpg" alt="添加微信" /></p>
-
-<table width="100%" border="0" align="center">
-<tr><td align="center"><span class="nav-item">
-<a class="nav-link" href="https://icp.gov.moe/?keyword=20246808">
- <i class="fa-solid fa-shield-check" style="color: #9F5F9F;" aria-hidden="true">
-</i><font color="#9F5F9F">
-萌ICP备20246808号</font>
-</body>
-</html>  
 
 <h2>关于我们</h2>
 <p><p><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" /></p>
