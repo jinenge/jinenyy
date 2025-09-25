@@ -30,9 +30,9 @@
 
 <table width="100%" border="0" align="center">
 <tr><td align="center"><span class="nav-item">
-<a class="nav-link" href="https://icp.gov.moe/?keyword=20246808">
+<a class="nav-link" href="https://icp.gov.moe/?keyword=20258894">
  <i class="fa-solid fa-shield-check" style="color: #9F5F9F;" aria-hidden="true">
 </i><font color="#9F5F9F">
-萌ICP备20246808号</font>
+萌ICP备20258894号</font>
 </body>
 </html>
