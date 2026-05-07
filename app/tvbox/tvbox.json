@@ -3,11 +3,11 @@
 //我们有权追究您的相关责任，并以法律的形式起诉您，本参考配置不赐予公开，请谨慎参考。
 {
   "spider": "./lib/jinenyy.jar;md5;9d5475daa7fbec9cce647339fefad786",
-  "wallpaper": "https://jinenyy.vip/wallpaper/",
+  "wallpaper": "https://jinenge.us.kg/wallpaper/",
   "sites": [
     {
       "key": "drpy_js_豆瓣",
-      "name": "🧿²⁰²⁵主页┃热门推荐",
+      "name": "🧿²⁰²⁶主页┃维护中",
       "type": 3,
       "api": "csp_Douban",
       "searchable": 0
