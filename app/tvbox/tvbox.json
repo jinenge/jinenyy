@@ -7,14 +7,14 @@
   "sites": [
     {
       "key": "drpy_js_豆瓣",
-      "name": "🧿²⁰²⁶主页┃维护中",
+      "name": "🧿²⁰²⁶主页┃推荐",
       "type": 3,
       "api": "csp_Douban",
       "searchable": 0
     },
     {
       "key": "豆瓣",
-      "name": "🧿²⁰²⁵┃豆瓣┃预告",
+      "name": "🧿²⁰²⁶┃豆瓣┃预告",
       "type": 3,
       "api": "csp_YGP",
       "playerType": 2,
@@ -22,7 +22,7 @@
     },
     {
       "key": "config",
-      "name": "🧿²⁰²⁵┃配置┃中心",
+      "name": "🧿²⁰²⁶┃配置┃中心",
       "type": 3,
       "api": "csp_Config",
       "playerType": 2
