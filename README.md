@@ -1,4 +1,7 @@
 # 进恩哥资源仓库
+
+##进恩哥资源仓库已经不再更新版本，目前新版项目为jinengeOS，也称为进恩哥系统，点击下方更新通道更新2.0版本后的版本即可使用。
+
 ## 官网Android客户端更新地址
    <br>
    <a href="https://jinenge.us.kg/update.html">
@@ -23,16 +26,9 @@
 <p>3、如果本客户端涉及到您的版权问题或者其他问题您可以向我们进行反馈处理，<a href="mailto:jinenge@foxmail.com"><i class="fa fa-envelope"></i>点击我给我发送邮箱处理</a></p>
 </div></div>
 <p>如果您觉得本平台参考的信息对您有帮助，您可以对本平台作者进行赞赏！
-<img src="https://jinenge.us.kg/img/icon/weixin.jpg" alt="微信赞赏" />
-<img src="https://jinenge.us.kg/img/icon/zhifubao.jpg" alt="支付宝赞赏" /></p>
+<img src="./img/icon/weixin.jpg" alt="微信赞赏" />
+<img src="./img/icon/zhifubao.jpg" alt="支付宝赞赏" /></p>
 <p>如需进行咨询本官网站长，请通过以下二维码添加微信咨询。
-<img src="https://jinenge.us.kg/img/icon/tianjiaweixin.jpg" alt="添加微信" /></p>
-
-<table width="100%" border="0" align="center">
-<tr><td align="center"><span class="nav-item">
-<a class="nav-link" href="https://icp.gov.moe/?keyword=20258894">
- <i class="fa-solid fa-shield-check" style="color: #9F5F9F;" aria-hidden="true">
-</i><font color="#9F5F9F">
-萌ICP备20258894号</font>
+<img src="./img/icon/tianjiaweixin.jpg" alt="添加微信" /></p>
 </body>
 </html>
